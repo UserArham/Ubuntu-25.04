@@ -1,0 +1,19 @@
+<div id="notifyBox"></div>
+#notifyBox {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px;
+    background: #333;
+    color: white;
+    border-radius: 8px;
+    opacity: 0;
+    transition: 0.4s;
+}
+function notify(msg) {
+    const n = document.getElementById("notifyBox");
+    n.innerText = msg;
+    n.style.opacity = 1;
+
+    setTimeout(() => n.style.opacity = 0, 2500);
+}

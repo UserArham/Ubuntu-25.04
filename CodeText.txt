@@ -1,0 +1,18 @@
+# Ubuntu 25.04 Simulator
+
+A lightweight mock Ubuntu 25.04 environment using Python and Docker.
+
+### Features
+- Fake Ubuntu 25.04 shell
+- Custom commands (`neofetch`, `help`, `list`, etc.)
+- Runs anywhere via Docker
+
+---
+
+## Installation
+
+```bash
+git clone https://github.com/YOUR_USERNAME/ubuntu-25.04-simulator
+cd ubuntu-25.04-simulator
+chmod +x run.sh
+./run.sh

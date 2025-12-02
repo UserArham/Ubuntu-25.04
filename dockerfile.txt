@@ -1,0 +1,17 @@
+FROM ubuntu:24.04
+
+LABEL maintainer="YourName"
+LABEL description="Mock Ubuntu 25.04 Simulator"
+
+RUN apt update && apt install -y \
+    python3 python3-pip neofetch nano htop && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /simulator
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY simulator/ ./simulator/
+
+ENTRYPOINT ["python3", "-m", "simulator.shell"]

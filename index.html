@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubuntu 25.04 Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div id="topbar">
+        <div class="title">Ubuntu 25.04 (Lunar Lynx) — Simulator</div>
+        <div class="clock" id="clock"></div>
+    </div>
+
+    <!-- Desktop -->
+    <div id="desktop">
+        <div class="icon" onclick="openTerminal()">
+            <img src="icons/terminal.png" alt="Terminal">
+            <span>Terminal</span>
+        </div>
+
+        <div class="icon" onclick="openAbout()">
+            <img src="icons/info.png" alt="About">
+            <span>About</span>
+        </div>
+    </div>
+
+    <!-- Windows -->
+    <div id="terminalWindow" class="window hidden">
+        <div class="windowHeader">
+            <span>Terminal</span>
+            <button onclick="closeWindow('terminalWindow')">X</button>
+        </div>
+        <div class="windowBody terminal">
+            <div id="terminalOutput"></div>
+            <input id="terminalInput" autocomplete="off" placeholder="Type a command...">
+        </div>
+    </div>
+
+    <div id="aboutWindow" class="window hidden">
+        <div class="windowHeader">
+            <span>About Ubuntu 25.04 Simulator</span>
+            <button onclick="closeWindow('aboutWindow')">X</button>
+        </div>
+        <div class="windowBody">
+            <h2>Ubuntu 25.04 Simulator</h2>
+            <p>A mock version of what Ubuntu 25.04 might look like.</p>
+            <p>Created for educational & simulation purposes.</p>
+        </div>
+    </div>
+
+    <script src="apps.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

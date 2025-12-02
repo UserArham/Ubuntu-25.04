@@ -1,3 +1,32 @@
+/* DOCK */
+#dock {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 64px;
+    background: #222c;
+    backdrop-filter: blur(10px);
+    padding: 10px 5px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 4px 12px #0006;
+}
+
+.dock-icon img {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.dock-icon img:hover {
+    transform: scale(1.15);
+    background: #ffffff10;
+}
 body {
     margin: 0;
     font-family: Ubuntu, sans-serif;

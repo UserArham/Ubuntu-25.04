@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubuntu 25.04 Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========================= -->
+    <!--        BOOT SCREEN        -->
+    <!-- ========================= -->
+    <div id="bootScreen">
+        <div class="boot-logo">Ubuntu 25.04</div>
+        <div class="spinner"></div>
+    </div>
+
+    <!-- ========================= -->
+    <!--       LOGIN SCREEN        -->
+    <!-- ========================= -->
+    <div id="loginScreen">
+        <div id="loginClock"></div>
+
+        <div id="loginBox">
+            <img src="icons/user.png" id="userIcon">
+            <div id="username">User</div>
+            <input type="password" id="passwordInput" placeholder="Enter Password">
+            <button id="loginBtn">Log In</button>
+        </div>
+    </div>
+
+    <!-- ========================= -->
+    <!--         TOP BAR           -->
+    <!-- ========================= -->
+    <div id="topbar">
+        <div class="title">Ubuntu 25.04 (Lunar Lynx) Simulator</div>
+        <div class="clock" id="clock"></div>
+    </div>
+
+    <!-- ========================= -->
+    <!--         DESKTOP           -->
+    <!-- ========================= -->
+    <div id="desktop">
+
+        <div class="icon" onclick="openTerminal()">
+            <img src="icons/terminal.png" alt="Terminal">
+            <span>Terminal</span>
+        </div>
+
+        <div class="icon" onclick="openAbout()">
+            <img src="icons/info.png" alt="About">
+            <span>About</span>
+        </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!--           DOCK            -->
+    <!-- ========================= -->
+    <div id="dock">
+
+        <div class="dock-icon" onclick="openTerminal()">
+            <img src="icons/terminal.png">
+        </div>
+
+        <div class="dock-icon" onclick="openBrowser()">
+            <img src="icons/browser.png">
+        </div>
+
+        <div class="dock-icon" onclick="openFiles()">
+            <img src="icons/files.png">
+        </div>
+
+        <div class="dock-icon" onclick="openSettings()">
+            <img src="icons/settings.png">
+        </div>
+
+    </div>
+
+    <!-- ========================= -->
+    <!--      TERMINAL WINDOW      -->
+    <!-- ========================= -->
+    <div id="terminalWindow" class="window hidden">
+        <div class="windowHeader">
+            <span>Terminal</span>
+            <button onclick="closeWindow('terminalWindow')">X</button>
+        </div>
+        <div class="windowBody terminal">
+            <div id="terminalOutput"></div>
+            <input id="terminalInput" autocomplete="off" placeholder="Type a command...">
+        </div>
+    </div>
+
+    <!-- ========================= -->
+    <!--        ABOUT WINDOW       -->
+    <!-- ========================= -->
+    <div id="aboutWindow" class="window hidden">
+        <div class="windowHeader">
+            <span>About Ubuntu 25.04 Simulator</span>
+            <button onclick="closeWindow('aboutWindow')">X</button>
+        </div>
+        <div class="windowBody">
+            <h2>Ubuntu 25.04 Simulator</h2>
+            <p>A mock version of Ubuntu 25.04 for web simulation.</p>
+            <p>Created for educational & demonstration use.</p>
+        </div>
+    </div>
+
+    <!-- ========================= -->
+    <!--        FILE MANAGER       -->
+    <!-- ========================= -->
+    <div id="filesWindow" class="window hidden">
+        <div class="windowHeader">
+            <span>Files</span>
+            <button onclick="closeWindow('filesWindow')">X</button>
+        </div>
+        <div class="windowBody">
+            <ul id="fileList">
+                <li>Documents/</li>
+                <li>Pictures/</li>
+                <li>Downloads/</li>
+                <li>Music/</li>
+                <li>Videos/</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ========================= -->
+    <!--        WEB BROWSER        -->
+    <!-- ========================= -->
+    <div id="browserWindow" class="window hidden">
+        <div class="windowHeader">
+            <span>Web Browser</span>
+            <button onclick="closeWindow('browserWindow')">X</button>
+        </div>
+        <div class="windowBody">
+            <input id="browserBar" placeholder="Enter URL (fake)">
+            <iframe id="browserFrame"></iframe>
+        </div>
+    </div>
+
+    <!-- ========================= -->
+    <!--         SETTINGS          -->
+    <!-- ========================= -->
+    <div id="settingsWindow" class="window hidden">
+        <div class="windowHeader">
+            <span>Settings</span>
+            <button onclick="closeWindow('settingsWindow')">X</button>
+        </div>
+        <div class="windowBody">
+            <h3>Settings</h3>
+
+            <p>Brightness</p>
+            <input type="range" min="0" max="100">
+
+            <p>Volume</p>
+            <input type="range" min="0" max="100">
+        </div>
+    </div>
+
+    <!-- ========================= -->
+    <!--     WORKSPACES OVERLAY    -->
+    <!-- ========================= -->
+    <div id="workspaceOverlay" class="hidden">
+        <h1>Workspace Overview (Press F9 to toggle)</h1>
+    </div>
+
+    <!-- ========================= -->
+    <!--       NOTIFICATIONS       -->
+    <!-- ========================= -->
+    <div id="notifyBox"></div>
+
+    <!-- ========================= -->
+    <!--         SCRIPTS           -->
+    <!-- ========================= -->
+    <script src="apps.js"></script>
+    <script src="windowManager.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

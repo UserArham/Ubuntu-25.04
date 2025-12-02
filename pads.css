@@ -1,0 +1,51 @@
+/* Login Screen */
+#loginScreen {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #3b3b3b, #1f1f1f);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#loginClock {
+    position: absolute;
+    top: 30px;
+    font-size: 32px;
+    color: #fff;
+}
+
+#loginBox {
+    text-align: center;
+    background: #222a;
+    padding: 30px;
+    border-radius: 14px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 12px #0006;
+}
+
+#userIcon {
+    width: 90px;
+    margin-bottom: 15px;
+}
+
+#passwordInput {
+    width: 260px;
+    padding: 10px;
+    margin-top: 10px;
+    background: #333;
+    border: none;
+    color: white;
+}
+
+#loginBtn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #e95420;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}

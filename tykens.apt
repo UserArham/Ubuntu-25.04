@@ -1,4 +1,0 @@
-apt install firefox
-apt remove gnome-shell
-apt search package
-apt update
